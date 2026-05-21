@@ -23,15 +23,8 @@ def clean_load(file_path: str) -> pd.DataFrame:
             # making default Nan values
             df[col] = df[col].replace({"": np.nan, "nan": np.nan, "NaN": np.nan})
         converted_numeric = pd.to_numeric(df[col], errors="coerce")
-
-        # Converion based allotment data column
-        if (converted_numeric.notna().sum()) > (len(df) * 0.5):
-            df[col] = converted_numeric  # Making that column into numric converion
-            df[col] = df[col].fillna(0).astype("Int64")
-        elif df[col].dtype == "object":
-            df[col] = df[col].fillna("Unknown").astype(str)
-        else:
-            df[col] = df[col].fillna(0.0)
+        # BUG : Numeric Entries are not parsed properly for conversion
+        print(converted_numeric)
     return df
 
 
