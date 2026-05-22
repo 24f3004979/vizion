@@ -10,8 +10,8 @@ import numpy as np
 
 def clean_load(file_path: str) -> pd.DataFrame:
     """
-    Cleaning and Loading
-    removing simple amboguious data elements for clean data"""
+    clean loading for the dataset
+    """
 
     df = pd.read_csv(file_path)
     # columns leading and trailing information

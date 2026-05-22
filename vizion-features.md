@@ -31,20 +31,16 @@ A simple tool for making data visual easy and simple to understand
 
 ```
 
+## Data Inconsistency
+>
+Some core data impurity could lead to wrong models being trained thus its required to have good data quality for the good model.
+>
+
+>
+**NP-Hard problem is the problem where its too complex to solve and no basic solving path is available**
+>
+>
+# TRANSFORM AND CONQUER : A MAJOR STEP INTO COMPUTER SCIENCE FOR THINKING AND SOLVING PROBLEM
+Making heap to tree was evolved with the transform and conquor into real problem.
+>
 ```
-
-## Making Sensible data set
-
-Converting data units into one unified system is must for good analysis thus we would require to convert the given units all to be one type.
-
-Units conversion and removal of empty is the best approach yet for the optimal condition
-We can go with predicting for simple dataset but if label is missing we would remove the whole row for correctness
-
-Data cleanliness is really required to be great for model to work well, thus analysis and cleaning part of the dataset is really crucial for the ultimate understanding of real Machine Learning working
-
-## Analysis Logic
-
-- Basic data information extraction
-- Mathematical modeling basics
-- Statistical Analysis about dataset
-- Lable for final plot recommendation
