@@ -10,7 +10,8 @@ import numpy as np
 
 def clean_load(file_path: str) -> pd.DataFrame:
     """
-    clean loading for the dataset
+    Data loading pipeline
+        + Read and Load
     """
 
     df = pd.read_csv(file_path)
@@ -25,19 +26,4 @@ def clean_load(file_path: str) -> pd.DataFrame:
         converted_numeric = pd.to_numeric(df[col], errors="coerce")
         # BUG : Numeric Entries are not parsed properly for conversion
         print(converted_numeric)
-    return df
-
-
-def generic_clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    # Data copy | Refrence conflicts
-    df = df.copy()
-    df = df.replace([None, "None", "none", "NaN", "null", "NULL"], np.nan)
-
-    # standardise the numeric dataset for nullity
-    for col in df.columns:
-        if pd.api.types.is_numeric_dtype(df[col]):
-            df[col] = df[col].fillna(0)
-        # rest as unknown values
-        else:
-            df[col] = df[col].fillna("Unknown").astype(str)
     return df

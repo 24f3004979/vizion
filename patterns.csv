@@ -1,0 +1,10 @@
+Farmer,Year,Crop,Soil,Sowing_Time,Rainfall_Level,Fertilizer_kg,Pest_Level,Yield_quintal
+F1,2020,Paddy,Loamy,Early June,Medium,120,Low,24
+F2,2020,Paddy,Loamy,Early June,Medium,120,Low,23
+F3,2020,Paddy,Sandy,Early June,Medium,120,Low,20
+F4,2021,Paddy,Loamy,Early June,Medium,120,Low,23
+F5,2021,Paddy,Loamy,Mid June,Low,120,Medium,21
+F6,2022,Paddy,Loamy,Mid June,Low,120,Medium,20
+F7,2023,Paddy,Loamy,Late June,Low,120,High,19
+F8,2024,Paddy,Loamy,Late June,Low,120,High,19
+F9,2020,Paddy,Loamy,Early June,Medium,120,Low,5
