@@ -18,3 +18,20 @@ Making clusters of dataset with respect to different common feature into the dat
 
 Basic Ways to find trend into the dataset
 making simple sort of the main data frame and visualizing the trend , making deep copy of original dataset for the refrence and exploration.
+
+Using past data for deriving insights, Making simple avg matrix comparision, and playing to explore the dataset.
+
++ Different variable combination reveal different patterns
++ Usefull to rearrange Feilds for exploring different perspective of dataset
+
+### Simple Insights deriving Logic to must implement
+**Make primary sorting from a data frame and then plot a dependent feature with that sorted values to observe the trend**
+
+## Finding pattern into the non related datasets with unified simple clustering methods 
+Make intensity [ numeric value based colouring in a range to data elements ] Bucket with the dataset with given ranges and cluster the information and insights
+
+# REINFORCEMENT LEARNING
+Machine Learning agent learns by interacting with an rewards or penalities for actions, goal is to maximize the reward in learning through trials and errors 
+
+Making reward system for the system for the learning into the task
+
