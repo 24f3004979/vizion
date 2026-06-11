@@ -1,0 +1,6 @@
+ppscore # for preditive power score
+scikit-learn # for Regression Tree for pps
+matplot # Making visualization
+seaborn # themes and ploting good graphs
+pandas # data handle
+numpy # foundational numeric calculations
