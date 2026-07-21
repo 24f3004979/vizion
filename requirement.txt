@@ -4,3 +4,5 @@ matplot # Making visualization
 seaborn # themes and ploting good graphs
 pandas # data handle
 numpy # foundational numeric calculations
+ipykernel
+keras
