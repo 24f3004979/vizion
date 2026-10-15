@@ -8,14 +8,18 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi[standard]>=0.143.2",
+    "jedi>=0.20.0",
     "jupyterlab-night>=0.5.2",
+    "jupyterthemes>=0.20.0",
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
     "pandas>=3.0.6",
+    "uvicorn>=0.54.0",
 ]
 
 [project.scripts]
-core = "core:main"
+core = "core.main:ignite"
 
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
@@ -26,3 +30,26 @@ dev = [
     "ipykernel>=7.4.0",
     "jupyter>=1.1.1",
 ]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort (import sorting)
+    "UP", # pyupgrade
+    "B",  # flake8-bugbear
+    "SIM",# flake8-simplify
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
