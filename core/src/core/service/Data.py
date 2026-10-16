@@ -26,10 +26,18 @@ class DataModel:
         # Root version initiated
         self.versions.append(self.DF)
 
+    def get(self):
+        '''
+        Returning the original data frame
+        INFO: Needs to be worked on to make it real statefull
+        '''
+        return self.DF.to_json()
+
     def fetch(self, fetch:FetchRequest):
         location = fetch.location
         try:
             info = self.DF.loc[location]
+            return info
         except KeyError as e:
             raise WrongLocation("Fetch Faild with wrong location problem")
 
