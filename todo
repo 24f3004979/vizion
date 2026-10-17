@@ -1,0 +1,14 @@
+TODO List
+
+1. Back-end | Endpoints response and request structure
+  + Make a contract document for unified data structure
+  + Dedicated API-Endpoint build with tests with defined structure
+  + simple exception handling along with good data handling senses integrationj
+
+2. Editor Interface for user
+  + Data parsing and breakdown component
+  + Unified api requesting gateway from front-end is required
+  + paginating components for Table component
+  + Editing controller integration along with editing workflow definition
+  + Defined documentation about working of each component for the interface
+
