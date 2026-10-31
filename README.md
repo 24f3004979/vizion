@@ -9,5 +9,3 @@ know your data with vizion sight
 2. Preprocessing
 3. Features crafting
 4. Insights and dashboard
-
-
