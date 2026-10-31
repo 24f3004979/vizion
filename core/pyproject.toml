@@ -1,0 +1,27 @@
+[project]
+name = "core"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Madhav Rimal", email = "madhavprapanna@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "pytest>=9.2.0",
+    "rich>=15.0.0",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+]
+
+[project.scripts]
+core = "core.main:main"
+
+[tool.pyright]
+venv = '.'
+
+[tool.pytest.ini_options]
+# Tell pytest exactly where to look for your tests
+testpaths = ["core"]
