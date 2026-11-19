@@ -62,31 +62,40 @@ def extract_columns(target_list, df):
     return numerical_columns, categorical_columns
 
 
-def categorical_values_handle(categorical_columns:list[str]):
+def categorical_values_handle(categorical_columns: list[str]):
     '''
     Listing out categorical columns
-    Making simple matplotlib, 
-    distribution plot for each values with their frequency listing
+    Making simple matplotlib distribution plot for each value with frequency
     '''
-    # plot config
-    print(f"Executing sequence with categorical values : {categorical_columns}")
+    print(f"Executing sequence with categorical values: {categorical_columns}")
+
     n_cols = len(categorical_columns)
-    n_rows = (n_cols + 3) // 4 # 4 plots per row
-    fig, axs = plt.subplots(n_rows,4, figsize=(16, 4*n_rows))
+    n_rows = (n_cols + 3) // 4  # 4 plots per row
 
-    # DISTRIBUTION PLOT SEQUENCE
-    i = 0
-    for col in categorical_columns:
+    fig, axs = plt.subplots(n_rows, 4, figsize=(16, 4 * n_rows),
+                            layout='constrained')
+    fig.suptitle('CATEGORICAL VALUES DISTRIBUTION DASHBOARD',
+             fontsize=14, fontweight='bold')
 
-        print(f"INSPECT DATASET SAMPLES : {df[col].sample(10)}")
+    for i, col in enumerate(categorical_columns):
+        ax = axs.flat[i]
 
-        df[col].value_counts().sort_values(ascending=False).plot(
-            kind='bar', color='blue', title=f'{col} value distribution',
-            ax=axs[i]
+        df[col].value_counts().head(10).plot(
+            kind='barh',
+            color='#4C72B0',
+            ax=ax,
         )
-        i += 1
-    
-    # prompting for the show
+
+        ax.set_title(col, fontsize=11, fontweight='bold', pad=6)
+        ax.set_xlabel('')           # "count" is obvious
+        ax.spines[['top', 'right']].set_visible(False)
+        ax.grid(axis='x', alpha=0.3)
+        ax.set_axisbelow(True)
+
+    # Hide unused subplots
+    for ax in axs.flat[n_cols:]:
+        ax.set_visible(False)
+
     plt.show()
     
 
@@ -119,17 +128,26 @@ def ignite():
 
         # Taking targeted columns as list of names
         targets = interface('Enter Target units with [space] separation :')
-        targets_list = targets.split(' ') # list of targets
+
+        # Taking whole dataset into load if no target specified
+        if targets == '':
+            targets_list = None
+        else:
+            targets_list = targets.split(' ') # list of targets
 
         # target_listing needs to be maped with string or the core should be with string
 
         decode_list = []
-        for target in targets_list:
-            decode_list.append(
-                decode[target] # gets the column name for the indexing
-            )
-        print(decode_list)
-
+        
+        # two way pathway for decode listing
+        if targets_list is None:
+            decode_list = list(df.columns)
+        else:
+            for target in targets_list:
+                decode_list.append(
+                    decode[target] # gets the column name for the indexing
+                )
+            print(decode_list)
         
         print(f"decode listing : {decode_list}")
         numerical_columns, categorical_columns = extract_columns(decode_list, df)
